@@ -68,8 +68,14 @@ body {
   font-size: 0.875rem;
 }
 ul {
-  list-style-type: none;
+  list-style-type: disc; /* This ensures that the bullet points are discs */
+  margin-left: 20px; /* This adds some left margin to indent the bullets */
 }
+
+li {
+  margin-bottom: 5px; /* Optional: Adds some space between each list item */
+}
+
 a {
   text-decoration: none;
 }
@@ -77,6 +83,10 @@ a {
   width: 100%;
   display: block;
 } */
+img {
+  max-width: 100%;
+  height: auto;
+}
 .nav-logo {
   width: 100%;
   display: block;
@@ -573,12 +583,14 @@ Projects
   transform: scale(0.8);
   -webkit-transform: scale(0.8);
 }
+.projects-center {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
 @media screen and (min-width: 676px) {
   .projects-center {
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    -webkit-column-gap: 2rem;
-    -moz-column-gap: 2rem;
     column-gap: 2rem;
   }
 }
@@ -590,14 +602,14 @@ Projects
 @media screen and (min-width: 1170px) {
   .projects-center {
     grid-template-rows: 200px 200px;
-    gap: 1rem;
     grid-template-areas:
       "a b b"
       "a c d";
   }
 }
 .project-img {
-  height: 100%;
+  width: 100%;
+  height: auto;
 }
 .project {
   height: 100%;
